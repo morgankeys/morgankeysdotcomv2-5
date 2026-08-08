@@ -1,4 +1,5 @@
 import { site } from '../data/site.js'
+import { asset } from '../lib/asset.js'
 import {
   LinkedInIcon,
   GithubIcon,
@@ -17,7 +18,7 @@ function ClientLogo({ logo }) {
   return (
     <img
       className="sidebar__logo-img"
-      src={logo.image}
+      src={asset(logo.image)}
       alt={`${logo.label} logo`}
       loading="lazy"
     />
@@ -30,7 +31,7 @@ export default function Sidebar() {
       <div className="sidebar__top">
         <img
           className="sidebar__avatar"
-          src={site.profileImage}
+          src={asset(site.profileImage)}
           alt={site.profileAlt}
           width="128"
           height="128"

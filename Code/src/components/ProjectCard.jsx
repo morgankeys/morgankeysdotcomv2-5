@@ -1,3 +1,4 @@
+import { asset } from '../lib/asset.js'
 import './ProjectCard.css'
 
 function Meta({ project }) {
@@ -19,7 +20,7 @@ export function CaseStudyCard({ project }) {
     <article className="cs-card">
       <h3 className="cs-card__title">{project.title}</h3>
       <div className="cs-card__media">
-        <img src={project.image} alt={project.alt} loading="lazy" />
+        <img src={asset(project.image)} alt={project.alt} loading="lazy" />
       </div>
       <a className="cs-card__cta" href={project.href || '#'}>
         View case study
@@ -38,7 +39,7 @@ export function OtherProjectItem({ project }) {
     <article className="op-item">
       <h3 className="op-item__title">{project.title}</h3>
       <div className="op-item__media">
-        <img src={project.image} alt={project.alt} loading="lazy" />
+        <img src={asset(project.image)} alt={project.alt} loading="lazy" />
       </div>
       <div className="op-item__summary">
         <p className="op-item__desc">{project.description}</p>
