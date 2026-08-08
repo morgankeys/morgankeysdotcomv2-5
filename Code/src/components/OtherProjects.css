@@ -1,0 +1,17 @@
+.other-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.other-projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+
+@media (max-width: 739px) {
+  .other-projects__list {
+    gap: 56px;
+  }
+}

@@ -1,0 +1,174 @@
+.sidebar {
+  flex: 0 0 var(--sidebar-width);
+  width: var(--sidebar-width);
+  padding: 64px 16px 64px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+/* --- Identity block --- */
+.sidebar__top {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  margin-bottom: 32px;
+}
+
+.sidebar__id {
+  margin-bottom: 16px;
+}
+
+.sidebar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-name);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-green-deep);
+}
+
+.sidebar__handle {
+  font-size: var(--fs-handle);
+  color: var(--color-rust);
+  line-height: 1.25;
+}
+
+.sidebar__socials {
+  display: flex;
+  gap: 24px;
+  color: var(--color-text);
+}
+
+.sidebar__socials a {
+  display: inline-flex;
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.sidebar__socials a:hover {
+  color: var(--color-green-deep);
+  transform: translateY(-2px);
+}
+
+/* --- Body block --- */
+.sidebar__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar__link {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--color-text);
+  align-self: flex-start;
+}
+
+.sidebar__link--underline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sidebar__link:hover {
+  color: var(--color-green-deep);
+}
+
+.sidebar__bio {
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+.sidebar__clients {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.sidebar__clients-label {
+  font-size: var(--fs-meta);
+  color: var(--color-text-muted);
+}
+
+.sidebar__logos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sidebar__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sidebar__logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===== Tablet & mobile: sidebar collapses to a centered top header ===== */
+@media (max-width: 1199px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    flex: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 32px 24px 24px;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-green-deep) 12%, transparent);
+  }
+
+  .sidebar__top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar__avatar {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 14px;
+  }
+
+  .sidebar__id {
+    margin-bottom: 12px;
+  }
+
+  .sidebar__name {
+    font-size: 26px;
+  }
+
+  .sidebar__handle {
+    font-size: 16px;
+  }
+
+  /* Hide the long-form bio + client logos in the compact header */
+  .sidebar__bio,
+  .sidebar__clients {
+    display: none;
+  }
+
+  .sidebar__body {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .sidebar__link {
+    align-self: center;
+  }
+}

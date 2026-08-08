@@ -1,0 +1,36 @@
+.case-studies {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Desktop: fixed-width cards wrapping to fill the column (3 → 2 across). */
+.case-studies__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.case-studies__grid > * {
+  flex: 0 0 var(--card-width);
+}
+
+/* Tablet: exactly two columns of fluid cards. */
+@media (max-width: 1199px) {
+  .case-studies__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .case-studies__grid > * {
+    flex: initial;
+    width: auto;
+  }
+}
+
+/* Mobile: single column. */
+@media (max-width: 739px) {
+  .case-studies__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,40 @@
+.layout {
+  display: flex;
+  align-items: flex-start;
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
+.content {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 128px;
+  padding: 56px 40px;
+}
+
+/* Tablet & mobile: single column, sidebar becomes a top header. */
+@media (max-width: 1199px) {
+  .layout {
+    flex-direction: column;
+  }
+  .content {
+    width: 100%;
+    gap: 96px;
+    padding: 40px 24px 72px;
+    align-items: center;
+  }
+  /* Keep section blocks left-aligned within a centered, readable column. */
+  .content > * {
+    width: 100%;
+    max-width: 820px;
+  }
+}
+
+@media (max-width: 739px) {
+  .content {
+    gap: 64px;
+    padding: 28px 20px 56px;
+  }
+}
