@@ -25,6 +25,17 @@ Matches the live design closely (rebuilt from the exact per-breakpoint frames in
 - At ≤1199 (tablet) and ≤739 (mobile) the sidebar collapses to a centered top header; the
   bio and client logos are hidden and the card grid reflows, mirroring the original.
 
+## Pages
+
+- **`/`** — the sidebar + case studies/other projects layout described above.
+- **`/about/`** — the long-form bio from [morgankeys.com/about](https://morgankeys.com/about):
+  a centered 752px column with a home link, headshot beside "Hi, I'm Morgan." (rust period),
+  social icons, eight paragraphs, and the two resume links. Reached from the sidebar's
+  "Read more about me →".
+
+Each page is a separate HTML entry rather than a client-side route, so deep links work on
+GitHub Pages without a redirect shim — see [`Agents/context/deployment.md`](../../Agents/context/deployment.md).
+
 ## Design tokens
 
 - Fonts: a **serif** for the name and project titles (matching the live site's serif

@@ -23,27 +23,45 @@ referenced through `asset()` in `src/lib/asset.js`. See `Agents/context/deployme
 
 ```
 Code/
-├── index.html                 # entry HTML, loads Inter via Google Fonts
+├── index.html                 # home entry HTML, loads Inter via Google Fonts
+├── about/index.html           # /about entry HTML
 ├── public/images/             # screenshots, client logos, and headshot from the live site
 └── src/
-    ├── main.jsx               # React entry
+    ├── main.jsx               # React entry for the home page
+    ├── about.jsx              # React entry for the about page
     ├── App.jsx / App.css      # sidebar + content layout
     ├── styles/
     │   ├── tokens.css         # colors, type scale, layout tokens
     │   └── global.css         # base/reset + section-label utility
     ├── data/
     │   ├── site.js            # sidebar content + links + client logos
+    │   ├── about.js           # long-form bio + resume links for /about
     │   ├── caseStudies.js     # 5 case studies (verbatim copy, brand accent)
     │   └── otherProjects.js   # 6 other projects (verbatim copy, brand accent)
     ├── lib/
-    │   └── asset.js           # resolves public/ paths against the deploy base
+    │   └── asset.js           # resolves root-relative paths against the deploy base
     └── components/
         ├── Sidebar.jsx / .css       # sticky left sidebar (collapses to top header)
+        ├── About.jsx / .css         # centered 752px prose column for /about
         ├── CaseStudies.jsx / .css   # rust label + wrapping card grid
         ├── OtherProjects.jsx / .css # rust label + stacked full-width items
         ├── ProjectCard.jsx / .css   # CaseStudyCard + OtherProjectItem
-        └── icons.jsx                # inline SVG social, arrow, Google/Microsoft logos
+        └── icons.jsx                # inline SVG home/social, arrow, Google/Microsoft logos
 ```
+
+## Pages
+
+Two pages, each its own HTML entry (wired up in `vite.config.js`) rather than a client-side
+router — GitHub Pages serves static files, so `/about/` resolves to `about/index.html` on its
+own and deep links work without a `404.html` redirect shim.
+
+| URL | Entry | Component |
+| --------- | ------------------ | ---------------------- |
+| `/` | `index.html` | `App.jsx` |
+| `/about/` | `about/index.html` | `components/About.jsx` |
+
+Links between pages are plain `<a href>` wrapped in `asset()`, which keeps them correct under
+the GitHub Pages subpath.
 
 ## Layout
 

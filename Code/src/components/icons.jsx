@@ -18,6 +18,21 @@ export function ArrowRight({ className }) {
   )
 }
 
+export function HomeIcon({ className }) {
+  return (
+    <svg
+      className={className}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 2.6 1.8 11.1a1 1 0 0 0 .64 1.77H4.1v8.03a1.1 1.1 0 0 0 1.1 1.1h4.06v-5.72h5.48V22h4.06a1.1 1.1 0 0 0 1.1-1.1v-8.03h1.66a1 1 0 0 0 .64-1.77L12 2.6z" />
+    </svg>
+  )
+}
+
 export function LinkedInIcon({ className }) {
   return (
     <svg

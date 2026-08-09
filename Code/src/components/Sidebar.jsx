@@ -69,12 +69,7 @@ export default function Sidebar() {
         >
           View resume
         </a>
-        <a
-          className="sidebar__link"
-          href={site.links.resume}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="sidebar__link" href={asset(site.links.about)}>
           Read more about me →
         </a>
 
