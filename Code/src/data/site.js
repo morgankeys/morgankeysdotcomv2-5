@@ -12,8 +12,11 @@ export const site = {
     'Master’s in Human-Computer Interaction, Bachelor’s in Math & Creative Writing',
   ],
   links: {
+    // Root-relative page paths go through asset() so they survive the deploy base.
+    home: '/',
+    about: '/about/',
     resume:
-      'https://docs.google.com/document/d/17NE5kyauDlHmiOSkLgHB0o-4KDqQe3s1TRdd5TZ2ph4/edit?tab=t.0#heading=h.ku2kldns6c11',
+      'https://docs.google.com/document/d/e/2PACX-1vTkTaSRuMrBZQGKysG3n6sVdmneoeBud8exiNz8Z0zjCCtpDurUjj-7lRTvvuCcmkjDMptOgK-74TPV/pub',
     linkedin: 'https://www.linkedin.com/in/morgankeys/',
     github: 'https://github.com/morgankeys',
     x: 'https://x.com/morgankeys',

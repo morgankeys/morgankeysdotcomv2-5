@@ -27,7 +27,28 @@ getting that right:
 
 **When adding a new image or other `public/` file, render it with `asset()`.** A raw
 `src="/images/foo.png"` works in local dev and 404s in production — a failure mode that is
-easy to miss because dev and prod differ.
+easy to miss because dev and prod differ. The same applies to links between pages: store the
+path root-relative in `Code/src/data/site.js` (`links.about = '/about/'`) and pass it through
+`asset()` at render time.
+
+## Pages are separate HTML entries, not routes
+
+There is no client-side router. Each page is its own Vite entry, registered in
+`build.rollupOptions.input` in `Code/vite.config.js`:
+
+| URL | Entry HTML | React entry | Component |
+| --------- | ------------------ | ---------------- | ---------------------- |
+| `/` | `index.html` | `src/main.jsx` | `App.jsx` |
+| `/about/` | `about/index.html` | `src/about.jsx` | `components/About.jsx` |
+
+Pages serves static files with no rewrite rules, so a directory entry like `about/index.html`
+is served at `/about/` directly — deep links and refreshes work with no `404.html` redirect
+shim, on both the project subpath and a future custom domain.
+
+**To add a page:** create `<name>/index.html` and `src/<name>.jsx`, add the entry to
+`rollupOptions.input`, and link to it with `asset('/<name>/')`. Forgetting the
+`rollupOptions.input` line is the easy mistake — the page then works in dev and is missing
+from `dist`.
 
 To verify a production build the way Pages will serve it, match the base in both commands:
 
