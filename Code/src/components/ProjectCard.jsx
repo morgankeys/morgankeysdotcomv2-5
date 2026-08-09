@@ -22,9 +22,16 @@ export function CaseStudyCard({ project }) {
       <div className="cs-card__media">
         <img src={asset(project.image)} alt={project.alt} loading="lazy" />
       </div>
-      <a className="cs-card__cta" href={project.href || '#'}>
-        View case study
-      </a>
+      {project.href && (
+        <a
+          className="cs-card__cta"
+          href={project.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          View case study
+        </a>
+      )}
       <div className="cs-card__summary">
         <p className="cs-card__desc">{project.description}</p>
         <Meta project={project} />
