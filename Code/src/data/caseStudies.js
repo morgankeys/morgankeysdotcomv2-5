@@ -12,6 +12,7 @@ export const caseStudies = [
       'Working quickly to meeting a market opportunity, I crafted both a publicly facing, customizable page and the admin experience behind it.',
     image: '/images/boardable-public-sites.png',
     alt: 'Boardable Public Pages screenshot',
+    href: 'https://www.figma.com/deck/NNb1ZY5DqjMoAIKcsoWCuq/-case-study--Boardable-Public-Ed-Pages?node-id=2008-1201',
   },
   {
     id: 'cisco-cybersecurity',
@@ -23,6 +24,7 @@ export const caseStudies = [
       'Lead a team to redesign a cybersecurity platform. Combined various, complex tools into a unified, streamlined experience.',
     image: '/images/cisco-cybersecurity.png',
     alt: 'Cisco Cybersecurity tool screenshot',
+    href: 'https://www.figma.com/deck/SIH4JZ1mk69GyhuungiqNT/-case-study--Cisco-XDR--2022-?node-id=1-10282',
   },
   {
     id: 'autodesk-id',
@@ -34,17 +36,7 @@ export const caseStudies = [
       'Seamlessly integrated a critical sign-up flow, paving the way for long term platform unification.',
     image: '/images/autodesk-id.png',
     alt: 'Autodesk ID sign-up flow screenshot',
-  },
-  {
-    id: 'grouping-client-suggestions',
-    title: 'Grouping & Client Suggestions',
-    company: 'BuildingConnected',
-    year: '2018',
-    accent: '#1c9c8c',
-    description:
-      'Grouping of RFPs, a construction-tech industry first, and suggestions to help subs maximize their chance of winning work.',
-    image: '/images/grouping-client-suggestions.png',
-    alt: 'BuildingConnected Opportunity Manager screenshot',
+    href: 'https://www.figma.com/deck/pNOmkOSvKYFaItMa8HDUWm/-case-study--Autodesk-ID?node-id=3-1789',
   },
   {
     id: 'chart-of-accounts-manager',
