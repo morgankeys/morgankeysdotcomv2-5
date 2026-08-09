@@ -5,7 +5,8 @@ what you need from `Agents/`.
 
 ## What this repo is
 
-A prototyping kit. Work is organized into four top-level, peer folders:
+A prototyping kit, forked to build **morgankeys.com** — a Vite + React portfolio site that
+deploys to GitHub Pages from `Code/`. Work is organized into four top-level, peer folders:
 
 | Folder     | Purpose                                                                    |
 | ---------- | ------------------------------------------------------------------------- |
@@ -20,6 +21,8 @@ You may read and manage **all four** folders, not just `Code/`.
 
 - **Skills** — reusable capabilities: `Agents/skills/`
 - **Context** — conventions, architecture, background to load before acting: `Agents/context/`
+  - **Deployment** — build, base path, and asset rules: `Agents/context/deployment.md`.
+    Read this before touching build config or adding files to `Code/public/`.
 - **Prompts** — task templates and reusable prompts: `Agents/prompts/`
 - **Index** — what's available and when to use it: `Agents/README.md`
 

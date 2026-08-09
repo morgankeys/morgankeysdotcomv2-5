@@ -13,6 +13,12 @@ npm run build    # production build into Code/dist
 npm run preview  # preview the production build
 ```
 
+## Deploy
+
+Pushing to `main` builds this folder and publishes it to GitHub Pages. Pages serves the site
+from a subpath, so `base` comes from the `VITE_BASE` env var and anything in `public/` must be
+referenced through `asset()` in `src/lib/asset.js`. See `Agents/context/deployment.md`.
+
 ## Structure
 
 ```
@@ -29,6 +35,8 @@ Code/
     │   ├── site.js            # sidebar content + links + client logos
     │   ├── caseStudies.js     # 5 case studies (verbatim copy, brand accent)
     │   └── otherProjects.js   # 6 other projects (verbatim copy, brand accent)
+    ├── lib/
+    │   └── asset.js           # resolves public/ paths against the deploy base
     └── components/
         ├── Sidebar.jsx / .css       # sticky left sidebar (collapses to top header)
         ├── CaseStudies.jsx / .css   # rust label + wrapping card grid
