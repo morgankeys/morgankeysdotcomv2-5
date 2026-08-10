@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   min-height: 40px;
-  margin-bottom: 48px;
+  margin-bottom: 96px;
 }
 
 .coa__back {
@@ -68,6 +68,7 @@
   font-weight: 600;
   line-height: 1.2;
   color: var(--color-text-strong);
+  text-align: center
 }
 
 .coa__hero {
