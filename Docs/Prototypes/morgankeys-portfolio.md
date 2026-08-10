@@ -20,8 +20,10 @@ Matches the live design closely (rebuilt from the exact per-breakpoint frames in
   lines, and "Client projects:" logos (Google, Microsoft, Cisco, Gartner).
 - **Content column** with two rust, uppercase-labelled sections:
   - **Case studies** (5) — white rounded cards (title → screenshot → "View case study" pill →
-    description → brand-chip + company/year), wrapping 3 → 2 → 1 columns.
+    description → company icon + company/year), wrapping 3 → 2 → 1 columns.
   - **Other projects** (6) — full-width items (title → large image → description → meta).
+    Company icons come from the Portfolio Design System (Boardable, DesignMap, Autodesk,
+    BuildingConnected, OpenGov, Hightail).
 - At ≤1199 (tablet) and ≤739 (mobile) the sidebar collapses to a centered top header; the
   bio and client logos are hidden and the card grid reflows, mirroring the original.
 
@@ -51,4 +53,5 @@ See [`Code/README.md`](../../Code/README.md). In short: `cd Code && npm install 
 ## Assets
 
 Images (screenshots, client logos, headshot) were downloaded from the live site into
-[`Code/public/images/`](../../Code/public/images). Content strings live in `Code/src/data/`.
+[`Code/public/images/`](../../Code/public/images). Company marks (`icon-*.{svg,png}`) were
+exported from the Portfolio Design System Figma file. Content strings live in `Code/src/data/`.

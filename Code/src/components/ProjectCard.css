@@ -2,9 +2,16 @@
 .meta {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   font-size: var(--fs-meta);
   color: var(--color-text-muted);
+}
+
+.meta__icon {
+  height: 14px;
+  width: auto;
+  flex: none;
+  display: block;
 }
 
 .meta__chip {

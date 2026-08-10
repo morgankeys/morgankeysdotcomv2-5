@@ -1,14 +1,26 @@
 import { asset } from '../lib/asset.js'
+import { companyIcons } from '../data/companyIcons.js'
 import './ProjectCard.css'
 
 function Meta({ project }) {
+  const icon = companyIcons[project.company]
+
   return (
     <p className="meta">
-      <span
-        className="meta__chip"
-        style={{ backgroundColor: project.accent || 'var(--color-text-muted)' }}
-        aria-hidden="true"
-      />
+      {icon ? (
+        <img
+          className="meta__icon"
+          src={asset(icon)}
+          alt=""
+          aria-hidden="true"
+        />
+      ) : (
+        <span
+          className="meta__chip"
+          style={{ backgroundColor: project.accent || 'var(--color-text-muted)' }}
+          aria-hidden="true"
+        />
+      )}
       {project.company}, {project.year}
     </p>
   )
