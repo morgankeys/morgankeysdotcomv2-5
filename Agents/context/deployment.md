@@ -5,21 +5,24 @@ GitHub Actions workflow.
 
 ## How it works
 
-Every push to `main` runs `.github/workflows/deploy.yml`, which builds `Code/` with Node 20
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds `Code/` with Node 24
 and publishes `Code/dist` to GitHub Pages via `actions/deploy-pages`. Pages is configured
 with the `workflow` build type, so there is no `gh-pages` branch and nothing is served from
 a committed `dist/` — `Code/.gitignore` excludes it deliberately.
 
-The live site is https://morgankeys.github.io/morgankeysdotcomv2-5/.
+The live site is https://morgankeys.com/, set as the repo's custom domain. The old
+`morgankeys.github.io/morgankeysdotcomv2-5/` URL redirects there.
 
 ## The base path, and why it matters
 
-Pages serves this repo from `/<repo-name>/`, not from the domain root. Two things depend on
-getting that right:
+The custom domain serves from the root, so the base path is `/`. It is still worth
+understanding, because the site spent its early life on the `/morgankeysdotcomv2-5/` subpath
+and the machinery that handled that is still in place:
 
 - **Bundled assets.** `Code/vite.config.js` reads `base` from the `VITE_BASE` environment
-  variable, defaulting to `/`. The workflow sets it to `/${{ github.event.repository.name }}/`
-  so it tracks the repo name automatically. Local dev and `npm run build` stay at `/`.
+  variable, defaulting to `/`. The workflow sets it explicitly to `/` so the intent is visible
+  at the point it matters. Reverting to a project subpath means setting it back to
+  `/<repo-name>/` there — nothing else changes.
 - **Files in `public/`.** Vite does *not* rewrite these; it copies them verbatim. The image
   paths in `Code/src/data/` are stored root-relative (`/images/foo.png`) and must be passed
   through `asset()` from `Code/src/lib/asset.js`, which prefixes `import.meta.env.BASE_URL`
@@ -44,28 +47,34 @@ There is no client-side router. Each page is its own Vite entry, registered in
 
 Pages serves static files with no rewrite rules, so a directory entry like `about/index.html`
 is served at `/about/` directly — deep links and refreshes work with no `404.html` redirect
-shim, on both the project subpath and a future custom domain.
+shim, on the custom domain root and on a project subpath alike.
 
 **To add a page:** create `<name>/index.html` and `src/<name>.jsx`, add the entry to
 `rollupOptions.input`, and link to it with `asset('/<name>/')`. Forgetting the
 `rollupOptions.input` line is the easy mistake — the page then works in dev and is missing
 from `dist`.
 
-To verify a production build the way Pages will serve it, match the base in both commands:
+To verify a production build the way Pages will serve it:
 
 ```bash
 cd Code
-VITE_BASE=/morgankeysdotcomv2-5/ npm run build
-VITE_BASE=/morgankeysdotcomv2-5/ npm run preview
-# then open http://localhost:4173/morgankeysdotcomv2-5/
+npm run build
+npm run preview
+# then open http://localhost:4173/
 ```
 
-## Moving to a custom domain
+## The custom domain
 
-A custom domain serves from the root, which removes the subpath problem entirely:
+`morgankeys.com` is set as the custom domain in the repo's Pages settings. DNS lives in
+Route 53, where the apex `A` record holds GitHub's four Pages IPs
+(`185.199.108.153` through `185.199.111.153`) and `www` is a `CNAME` to
+`morgankeys.github.io` (bare, with no repo name). Route 53's `Alias` toggle only targets AWS
+resources, so the `ALIAS`/`ANAME` option in GitHub's docs is not available here.
 
-1. Set `VITE_BASE: /` in the workflow's build step.
-2. Add `Code/public/CNAME` containing the bare domain (e.g. `morgankeys.com`).
-3. Point DNS at GitHub Pages and set the custom domain in the repo's Pages settings.
+**There is no `CNAME` file in `Code/public/`, and adding one would do nothing.** That file is
+how branch-based publishing carries the domain; this repo publishes from an Actions workflow,
+where GitHub ignores it and reads the domain from the Pages settings instead. An earlier
+version of this doc got that wrong.
 
-The `asset()` helper stays correct either way, so no component changes are needed.
+The `asset()` helper is correct at any base, so moving between a custom domain and a project
+subpath needs no component changes — only the `VITE_BASE` value in the workflow.
