@@ -4,6 +4,8 @@
   --coa-pad: 64px;
   --coa-gap: 128px;
   --coa-callout: #f6f8fd;
+  /* Figures already include baked-in shadows; kill the global img drop shadow. */
+  --image-shadow: none;
 
   max-width: var(--coa-max);
   margin: 0 auto;
