@@ -10,12 +10,7 @@ and publishes `Code/dist` to GitHub Pages via `actions/deploy-pages`. Pages is c
 with the `workflow` build type, so there is no `gh-pages` branch and nothing is served from
 a committed `dist/` — `Code/.gitignore` excludes it deliberately.
 
-The site URL is https://morgankeys.github.io/morgankeysdotcomv2-5/.
-
-**Pages is currently unpublished** — the site was deliberately taken down while the content is
-still being finished, so that URL 404s and the deploy workflow's `deploy` step will fail on
-push. To republish: repo Settings → Pages → set Source to "GitHub Actions", then re-run the
-workflow. Don't "fix" the failing deploy step by changing the workflow; it is correct as-is.
+The live site is https://morgankeys.github.io/morgankeysdotcomv2-5/.
 
 ## The base path, and why it matters
 
