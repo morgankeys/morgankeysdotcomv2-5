@@ -9,7 +9,7 @@ export const caseStudies = [
     year: '2025',
     accent: '#f25325',
     description:
-      'Working quickly to meeting a market opportunity, I crafted both a publicly facing, customizable page and the admin experience behind it.',
+      'Working quickly to meet a market opportunity, I crafted both a public-facing, customizable page and the admin experience behind it.',
     image: '/images/boardable-public-sites.png',
     alt: 'Boardable Public Pages screenshot',
     href: 'https://www.figma.com/deck/NNb1ZY5DqjMoAIKcsoWCuq/-case-study--Boardable-Public-Ed-Pages?node-id=2008-1201',
@@ -21,7 +21,7 @@ export const caseStudies = [
     year: '2023',
     accent: '#2d3e50',
     description:
-      'Lead a team to redesign a cybersecurity platform. Combined various, complex tools into a unified, streamlined experience.',
+      'Led a team to redesign a cybersecurity platform. Combined various, complex tools into a unified, streamlined experience.',
     image: '/images/cisco-cybersecurity.png',
     alt: 'Cisco Cybersecurity tool screenshot',
     href: 'https://www.figma.com/deck/SIH4JZ1mk69GyhuungiqNT/-case-study--Cisco-XDR--2022-?node-id=1-10282',
@@ -33,7 +33,7 @@ export const caseStudies = [
     year: '2020',
     accent: '#0a0f0a',
     description:
-      'Seamlessly integrated a critical sign-up flow, paving the way for long term platform unification.',
+      'Seamlessly integrated a critical sign-up flow, paving the way for long-term platform unification.',
     image: '/images/autodesk-id.png',
     alt: 'Autodesk ID sign-up flow screenshot',
     href: 'https://www.figma.com/deck/pNOmkOSvKYFaItMa8HDUWm/-case-study--Autodesk-ID?node-id=3-1789',

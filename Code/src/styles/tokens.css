@@ -46,4 +46,7 @@
 
   /* Motion */
   --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+
+  /* Image drop shadow — tweak here to adjust site-wide */
+  --image-shadow: 0 2px 8px color-mix(in srgb, var(--color-text-strong) 10%, transparent);
 }
