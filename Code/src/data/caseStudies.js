@@ -48,5 +48,6 @@ export const caseStudies = [
       'Worked with Customer Success and subject matter experts to reimagine the building and management of accounting hierarchies. Awarded a patent.',
     image: '/images/chart-of-accounts.png',
     alt: 'OpenGov chart of accounts manager screenshot',
+    href: '/opengov-coa/',
   },
 ]

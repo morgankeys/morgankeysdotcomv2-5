@@ -2,30 +2,15 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: var(--projects-max);
 }
 
-/* Desktop: fixed-width cards wrapping to fill the column (3 → 2 across). */
+/* Two equal columns that fill the same width as Other projects. */
 .case-studies__grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
-}
-
-.case-studies__grid > * {
-  flex: 0 0 var(--card-width);
-}
-
-/* Tablet: exactly two columns of fluid cards. */
-@media (max-width: 1199px) {
-  .case-studies__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .case-studies__grid > * {
-    flex: initial;
-    width: auto;
-  }
 }
 
 /* Mobile: single column. */

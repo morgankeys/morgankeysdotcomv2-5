@@ -33,6 +33,26 @@ export function HomeIcon({ className }) {
   )
 }
 
+export function BackIcon({ className }) {
+  return (
+    <svg
+      className={className}
+      width="24"
+      height="16"
+      viewBox="0 0 24 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <line x1="23" y1="8" x2="1" y2="8" />
+      <polyline points="8 15 1 8 8 1" />
+    </svg>
+  )
+}
+
 export function LinkedInIcon({ className }) {
   return (
     <svg

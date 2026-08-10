@@ -34,6 +34,10 @@ Matches the live design closely (rebuilt from the exact per-breakpoint frames in
   a centered 752px column with a home link, headshot beside "Hi, I'm Morgan." (rust period),
   social icons, eight paragraphs, and the two resume links. Reached from the sidebar's
   "Read more about me →".
+- **`/opengov-coa/`** — the OpenGov Chart of Accounts Manager case study from
+  [morgankeys.com/opengov-coa](https://morgankeys.com/opengov-coa): a 1024px column with back
+  navigation, hero screenshot, live AI-prototype callout (Figma Make), and long-form sections
+  with figures. Linked from the home page Chart of Accounts Manager case study card.
 
 Each page is a separate HTML entry rather than a client-side route, so deep links work on
 GitHub Pages without a redirect shim — see [`Agents/context/deployment.md`](../../Agents/context/deployment.md).
@@ -54,4 +58,5 @@ See [`Code/README.md`](../../Code/README.md). In short: `cd Code && npm install 
 
 Images (screenshots, client logos, headshot) were downloaded from the live site into
 [`Code/public/images/`](../../Code/public/images). Company marks (`icon-*.{svg,png}`) were
-exported from the Portfolio Design System Figma file. Content strings live in `Code/src/data/`.
+exported from the Portfolio Design System Figma file. OpenGov case study figures live in
+`Code/public/images/opengov-coa/`. Content strings live in `Code/src/data/`.

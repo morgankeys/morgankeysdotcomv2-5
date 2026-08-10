@@ -45,6 +45,7 @@ There is no client-side router. Each page is its own Vite entry, registered in
 | --------- | ------------------ | ---------------- | ---------------------- |
 | `/` | `index.html` | `src/main.jsx` | `App.jsx` |
 | `/about/` | `about/index.html` | `src/about.jsx` | `components/About.jsx` |
+| `/opengov-coa/` | `opengov-coa/index.html` | `src/opengov-coa.jsx` | `components/OpenGovCoa.jsx` |
 
 Pages serves static files with no rewrite rules, so a directory entry like `about/index.html`
 is served at `/about/` directly — deep links and refreshes work with no `404.html` redirect

@@ -15,6 +15,7 @@ export const site = {
     // Root-relative page paths go through asset() so they survive the deploy base.
     home: '/',
     about: '/about/',
+    opengovCoa: '/opengov-coa/',
     resume:
       'https://docs.google.com/document/d/e/2PACX-1vTkTaSRuMrBZQGKysG3n6sVdmneoeBud8exiNz8Z0zjCCtpDurUjj-7lRTvvuCcmkjDMptOgK-74TPV/pub',
     linkedin: 'https://www.linkedin.com/in/morgankeys/',

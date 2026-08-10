@@ -1,0 +1,252 @@
+/* Case study page matching morgankeys.com/opengov-coa (1024px column). */
+.coa {
+  --coa-max: 1024px;
+  --coa-pad: 64px;
+  --coa-gap: 128px;
+  --coa-callout: #f6f8fd;
+
+  max-width: var(--coa-max);
+  margin: 0 auto;
+  padding: 20px var(--coa-pad) 96px;
+}
+
+/* --- Top bar: back + brand --- */
+.coa__top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin-bottom: 48px;
+}
+
+.coa__back {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  color: var(--color-text-strong);
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.coa__back:hover {
+  color: var(--color-green-deep);
+  transform: translateY(calc(-50% - 2px));
+}
+
+.coa__brand {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text-strong);
+  text-align: center;
+}
+
+/* --- Intro: logo, title, hero --- */
+.coa__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.coa__logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.coa__title {
+  align-self: stretch;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text-strong);
+}
+
+.coa__hero {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+/* --- Live prototype callout --- */
+.coa__prototype {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: var(--coa-gap);
+  padding: 32px;
+  background: var(--coa-callout);
+  border-radius: var(--radius-card);
+}
+
+.coa__prototype-copy {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.coa__prototype-eyebrow {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.coa__prototype-body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.coa__prototype-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.coa__prototype-cta:hover {
+  background: var(--color-green-deep);
+  transform: translateY(-1px);
+}
+
+.coa__prototype-image {
+  flex: 0 0 295px;
+  width: 295px;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(10, 15, 10, 0.12);
+}
+
+/* --- Story sections --- */
+.coa__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--coa-gap);
+  margin-top: var(--coa-gap);
+}
+
+.coa__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.coa__heading {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text-strong);
+}
+
+.coa__body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.coa__figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 24px auto 0;
+  border-radius: var(--radius);
+}
+
+.coa__figure--portrait {
+  width: min(300px, 100%);
+}
+
+.coa__figure--medium {
+  width: min(531px, 100%);
+}
+
+.coa__footer {
+  margin-top: var(--coa-gap);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 899px) {
+  .coa {
+    --coa-pad: 32px;
+    --coa-gap: 80px;
+    padding-top: 16px;
+    padding-bottom: 72px;
+  }
+
+  .coa__title,
+  .coa__heading {
+    font-size: 32px;
+  }
+
+  .coa__prototype {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .coa__prototype-image {
+    flex-basis: auto;
+    width: min(295px, 100%);
+    align-self: center;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 739px) {
+  .coa {
+    --coa-pad: 20px;
+    --coa-gap: 56px;
+    padding-bottom: 64px;
+  }
+
+  .coa__top {
+    margin-bottom: 32px;
+  }
+
+  .coa__brand {
+    font-size: 20px;
+  }
+
+  .coa__intro {
+    gap: 28px;
+  }
+
+  .coa__logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .coa__title,
+  .coa__heading {
+    font-size: 28px;
+  }
+
+  .coa__prototype {
+    padding: 24px;
+  }
+
+  .coa__prototype-eyebrow {
+    font-size: 16px;
+  }
+}

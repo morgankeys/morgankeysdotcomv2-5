@@ -28,6 +28,8 @@ function Meta({ project }) {
 
 // Case study: white rounded card with a "View case study" pill.
 export function CaseStudyCard({ project }) {
+  const isExternal = project.href?.startsWith('http')
+
   return (
     <article className="cs-card">
       <h3 className="cs-card__title">{project.title}</h3>
@@ -37,9 +39,8 @@ export function CaseStudyCard({ project }) {
       {project.href && (
         <a
           className="cs-card__cta"
-          href={project.href}
-          target="_blank"
-          rel="noreferrer"
+          href={isExternal ? project.href : asset(project.href)}
+          {...(isExternal ? { target: '_blank', rel: 'noreferrer' } : {})}
         >
           View case study
         </a>

@@ -20,16 +20,16 @@
   /* Cool accent */
   --color-blue: #05a6f0;
 
-  /* Typography — headings use a serif (matching the live site's serif fallback);
-     everything else uses Inter, the font the published site actually loads. */
-  --font-display: Georgia, 'Times New Roman', Times, serif;
+  /* Typography — body/UI Inter; display headings Geist; sidebar name serif. */
+  --font-name: Georgia, 'Times New Roman', Times, serif;
+  --font-display: 'Geist Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   /* Type scale (px values taken from the Figma node tree) */
   --fs-page-title: 48px;
   --fs-name: 32px;
   --fs-handle: 20px;
-  --fs-card-title: 24px;
+  --fs-card-title: 20px;
   --fs-prose: 18px;
   --fs-body: 16px;
   --fs-meta: 14px;
@@ -39,7 +39,7 @@
   --sidebar-width: 342px;
   --content-max: 1400px;
   --prose-max: 752px;
-  --card-width: 340px;
+  --projects-max: 800px;
   --radius: 8px;
   --radius-card: 16px;
   --radius-pill: 24px;

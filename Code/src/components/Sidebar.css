@@ -30,7 +30,7 @@
 }
 
 .sidebar__name {
-  font-family: var(--font-display);
+  font-family: var(--font-name);
   font-size: var(--fs-name);
   font-weight: 600;
   line-height: 1.15;
