@@ -4,6 +4,9 @@ Close the gaps found in an audit of how morgankeys.com presents itself to search
 social unfurlers, and AI crawlers. Tasks 1–4 are independent and can be done in any order or
 separately; task 5 is a larger architectural decision that should be made on its own.
 
+Task 2 (favicon) is already done — kept here with its notes for context. Tasks 1, 3, and 4 are
+still open.
+
 ## Orientation
 
 Read `Agents/context/deployment.md` first. Two facts from it drive most of this work:
@@ -45,13 +48,20 @@ a square 1200×1200 crop. Put it in `Code/public/images/`.
 Verify with the LinkedIn Post Inspector and Slack's unfurl preview against the deployed URL —
 these tools fetch live, so this can only be checked after a deploy, not locally.
 
-## 2. Favicon
+## 2. Favicon — done
 
-There is no `favicon.ico` and no `<link rel="icon">`, so tabs and bookmarks show a generic globe
-and every visit 404s on `/favicon.ico`. Add an icon to `Code/public/` and reference it from both
-entries. An SVG favicon with an `.ico` fallback covers current browsers; add
-`apple-touch-icon.png` (180×180) if iOS home-screen saves matter. The site's rust `#b72100` and
-green `#354439` on the cream `#fffdfa` are the palette to draw from — see `Code/README.md`.
+A circular crop of the headshot, generated from `Code/public/images/profile.png` at full
+resolution: `favicon.ico` (16/32/48), `favicon-96.png` for HiDPI tabs, and a 180×180
+`apple-touch-icon.png`. All three sit in `Code/public/` and are linked from both entries.
+
+The original suggestion here was a drawn mark in the site palette with an SVG favicon; the
+photo was chosen instead. Two consequences worth knowing if this is ever revisited:
+
+- **It is raster, not SVG.** Fine at every size that matters, but it will not scale to a size
+  that has not been generated.
+- **At 16×16 it reads as a warm blob**, not a face — inherent to photographic favicons. It is
+  recognizable from 32×32 up, which is what most browsers now use. A drawn monogram would be
+  sharper at the smallest size, at the cost of the personal association.
 
 ## 3. `Person` structured data
 
@@ -110,7 +120,7 @@ branding, not a fix.
 
 - [ ] OG + Twitter tags on both entries, with a purpose-built share image in `Code/public/images/`
 - [ ] Unfurl verified on the deployed URL with LinkedIn Post Inspector and Slack
-- [ ] Favicon present and referenced from both entries
+- [x] Favicon present and referenced from both entries
 - [ ] `Person` JSON-LD on the home page, passing Google's Rich Results Test
 - [ ] Canonical on both entries; `robots.txt` and `sitemap.xml` in `Code/public/`
 - [ ] `npm run build` in `Code/` succeeds and the new `public/` files appear in `dist/`
