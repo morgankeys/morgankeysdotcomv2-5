@@ -53,11 +53,14 @@ these tools fetch live, so this can only be checked after a deploy, not locally.
 A rounded-square headshot icon supplied by Morgan, in `Code/public/`, linked from both entries:
 `favicon.ico` (48/32/16), `favicon-96.png` for HiDPI tabs, and a 180×180 `apple-touch-icon.png`.
 
-The artwork is his, not generated — do not regenerate it from `images/profile.png`. The 96px
-PNG is his file byte-for-byte; the `.ico` is his 180 resampled down; the Apple icon is his 180
-flattened onto the cream `#fffdfa`, because iOS renders alpha as black. That flattening is safe
-because iOS masks at ~22.4% corner radius and this artwork rounds at 14.4%, so the mask cuts
-wider than the artwork's own corners and no background shows.
+All three are his artwork, not generated — do not regenerate them from `images/profile.png`.
+The 96px PNG and the Apple icon are his files byte-for-byte; the `.ico` is his rounded 180
+resampled down to 48/32/16.
+
+He supplied two 180s: a rounded-corner one for the browser icons and a square, fully opaque one
+for `apple-touch-icon.png`. Keep them in those roles. iOS renders alpha as black and applies its
+own ~22.4% corner mask, so the Apple icon must stay square and opaque — swapping the rounded
+version in would double-round it.
 
 The original suggestion here was a drawn mark in the site palette with an SVG favicon. Two
 consequences of using a photo, if this is ever revisited:
