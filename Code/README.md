@@ -24,13 +24,11 @@ referenced through `asset()` in `src/lib/asset.js`. See `Agents/context/deployme
 ```
 Code/
 ├── index.html                 # home entry HTML, loads Inter via Google Fonts
-├── about/index.html           # /about entry HTML
 ├── opengov-coa/index.html     # /opengov-coa entry HTML
 ├── public/images/             # screenshots, client logos, and headshot from the live site
 │   └── opengov-coa/           # figures for the OpenGov case study page
 └── src/
     ├── main.jsx               # React entry for the home page
-    ├── about.jsx              # React entry for the about page
     ├── opengov-coa.jsx        # React entry for the OpenGov case study
     ├── App.jsx / App.css      # sidebar + content layout
     ├── styles/
@@ -38,7 +36,6 @@ Code/
     │   └── global.css         # base/reset + section-label utility
     ├── data/
     │   ├── site.js            # sidebar content + links + client logos
-    │   ├── about.js           # long-form bio + resume links for /about
     │   ├── opengovCoa.js      # OpenGov COA case study copy + figure paths
     │   ├── caseStudies.js     # 5 case studies (verbatim copy, brand accent)
     │   └── otherProjects.js   # 6 other projects (verbatim copy, brand accent)
@@ -46,24 +43,22 @@ Code/
     │   └── asset.js           # resolves root-relative paths against the deploy base
     └── components/
         ├── Sidebar.jsx / .css       # sticky left sidebar (collapses to top header)
-        ├── About.jsx / .css         # centered 752px prose column for /about
         ├── OpenGovCoa.jsx / .css    # long-form OpenGov case study page
         ├── CaseStudies.jsx / .css   # rust label + wrapping card grid
         ├── OtherProjects.jsx / .css # rust label + stacked full-width items
         ├── ProjectCard.jsx / .css   # CaseStudyCard + OtherProjectItem
-        └── icons.jsx                # inline SVG home/social, arrow, Google/Microsoft logos
+        └── icons.jsx                # inline SVG social, arrow, Google/Microsoft logos
 ```
 
 ## Pages
 
 Each page is its own HTML entry (wired up in `vite.config.js`) rather than a client-side
-router — GitHub Pages serves static files, so `/about/` resolves to `about/index.html` on its
-own and deep links work without a `404.html` redirect shim.
+router — GitHub Pages serves static files, so `/opengov-coa/` resolves to
+`opengov-coa/index.html` on its own and deep links work without a `404.html` redirect shim.
 
 | URL | Entry | Component |
 | --------- | ------------------ | ---------------------- |
 | `/` | `index.html` | `App.jsx` |
-| `/about/` | `about/index.html` | `components/About.jsx` |
 | `/opengov-coa/` | `opengov-coa/index.html` | `components/OpenGovCoa.jsx` |
 
 Links between pages are plain `<a href>` wrapped in `asset()`, which keeps them correct under

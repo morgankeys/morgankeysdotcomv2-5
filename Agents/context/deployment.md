@@ -31,8 +31,8 @@ and the machinery that handled that is still in place:
 **When adding a new image or other `public/` file, render it with `asset()`.** A raw
 `src="/images/foo.png"` works in local dev and 404s in production — a failure mode that is
 easy to miss because dev and prod differ. The same applies to links between pages: store the
-path root-relative in `Code/src/data/site.js` (`links.about = '/about/'`) and pass it through
-`asset()` at render time.
+path root-relative in `Code/src/data/site.js` (`links.opengovCoa = '/opengov-coa/'`) and pass
+it through `asset()` at render time.
 
 ## Pages are separate HTML entries, not routes
 
@@ -42,12 +42,11 @@ There is no client-side router. Each page is its own Vite entry, registered in
 | URL | Entry HTML | React entry | Component |
 | --------- | ------------------ | ---------------- | ---------------------- |
 | `/` | `index.html` | `src/main.jsx` | `App.jsx` |
-| `/about/` | `about/index.html` | `src/about.jsx` | `components/About.jsx` |
 | `/opengov-coa/` | `opengov-coa/index.html` | `src/opengov-coa.jsx` | `components/OpenGovCoa.jsx` |
 
-Pages serves static files with no rewrite rules, so a directory entry like `about/index.html`
-is served at `/about/` directly — deep links and refreshes work with no `404.html` redirect
-shim, on the custom domain root and on a project subpath alike.
+Pages serves static files with no rewrite rules, so a directory entry like
+`opengov-coa/index.html` is served at `/opengov-coa/` directly — deep links and refreshes work
+with no `404.html` redirect shim, on the custom domain root and on a project subpath alike.
 
 **To add a page:** create `<name>/index.html` and `src/<name>.jsx`, add the entry to
 `rollupOptions.input`, and link to it with `asset('/<name>/')`. Forgetting the

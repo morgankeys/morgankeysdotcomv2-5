@@ -69,9 +69,6 @@ export default function Sidebar() {
         >
           View resume
         </a>
-        <a className="sidebar__link" href={asset(site.links.about)}>
-          Read more about me →
-        </a>
 
         {site.bio.map((line) => (
           <p key={line} className="sidebar__bio">
