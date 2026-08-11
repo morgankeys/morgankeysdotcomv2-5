@@ -26,9 +26,9 @@ Code/
 ├── index.html                 # home entry HTML, loads Inter via Google Fonts
 ├── opengov-coa/index.html     # /opengov-coa entry HTML
 ├── public/                    # copied to the site root verbatim, not rewritten by Vite
-│   ├── favicon.ico            # circular headshot crop, 16/32/48
-│   ├── favicon-96.png         # same mark, for HiDPI tabs
-│   ├── apple-touch-icon.png   # 180×180, opaque, for iOS home screens
+│   ├── favicon.ico            # rounded-square headshot icon, 48/32/16
+│   ├── favicon-96.png         # same icon, for HiDPI tabs
+│   ├── apple-touch-icon.png   # same icon, 180×180 opaque, for iOS home screens
 │   └── images/                # screenshots, client logos, and headshot from the live site
 │       └── opengov-coa/       # figures for the OpenGov case study page
 └── src/

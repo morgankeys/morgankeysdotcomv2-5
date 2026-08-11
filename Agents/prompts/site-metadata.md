@@ -50,15 +50,20 @@ these tools fetch live, so this can only be checked after a deploy, not locally.
 
 ## 2. Favicon — done
 
-A circular crop of the headshot, generated from `Code/public/images/profile.png` at full
-resolution: `favicon.ico` (16/32/48), `favicon-96.png` for HiDPI tabs, and a 180×180
-`apple-touch-icon.png`. All three sit in `Code/public/` and are linked from both entries.
+A rounded-square headshot icon supplied by Morgan, in `Code/public/`, linked from both entries:
+`favicon.ico` (48/32/16), `favicon-96.png` for HiDPI tabs, and a 180×180 `apple-touch-icon.png`.
 
-The original suggestion here was a drawn mark in the site palette with an SVG favicon; the
-photo was chosen instead. Two consequences worth knowing if this is ever revisited:
+The artwork is his, not generated — do not regenerate it from `images/profile.png`. The 96px
+PNG is his file byte-for-byte; the `.ico` is his 180 resampled down; the Apple icon is his 180
+flattened onto the cream `#fffdfa`, because iOS renders alpha as black. That flattening is safe
+because iOS masks at ~22.4% corner radius and this artwork rounds at 14.4%, so the mask cuts
+wider than the artwork's own corners and no background shows.
+
+The original suggestion here was a drawn mark in the site palette with an SVG favicon. Two
+consequences of using a photo, if this is ever revisited:
 
 - **It is raster, not SVG.** Fine at every size that matters, but it will not scale to a size
-  that has not been generated.
+  that has not been generated. Regenerating from a larger original is Morgan's call.
 - **At 16×16 it reads as a warm blob**, not a face — inherent to photographic favicons. It is
   recognizable from 32×32 up, which is what most browsers now use. A drawn monogram would be
   sharper at the smallest size, at the cost of the personal association.
