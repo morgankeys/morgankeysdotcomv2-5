@@ -25,8 +25,12 @@ referenced through `asset()` in `src/lib/asset.js`. See `Agents/context/deployme
 Code/
 ├── index.html                 # home entry HTML, loads Inter via Google Fonts
 ├── opengov-coa/index.html     # /opengov-coa entry HTML
-├── public/images/             # screenshots, client logos, and headshot from the live site
-│   └── opengov-coa/           # figures for the OpenGov case study page
+├── public/                    # copied to the site root verbatim, not rewritten by Vite
+│   ├── favicon.ico            # rounded-square headshot icon, 48/32/16
+│   ├── favicon-96.png         # same icon, for HiDPI tabs
+│   ├── apple-touch-icon.png   # square 180×180 opaque variant, for iOS home screens
+│   └── images/                # screenshots, client logos, and headshot from the live site
+│       └── opengov-coa/       # figures for the OpenGov case study page
 └── src/
     ├── main.jsx               # React entry for the home page
     ├── opengov-coa.jsx        # React entry for the OpenGov case study
