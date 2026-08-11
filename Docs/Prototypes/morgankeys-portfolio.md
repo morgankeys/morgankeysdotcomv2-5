@@ -16,7 +16,7 @@ Matches the live design closely (rebuilt from the exact per-breakpoint frames in
 `_index.json`):
 
 - **Sticky left sidebar (342px)** — headshot, "Morgan Keys" (serif, green), "@morgankeys"
-  (rust), LinkedIn + GitHub icons, bold "View resume" / "Read more about me →", three bio
+  (rust), LinkedIn + GitHub icons, a bold "View resume" link, three bio
   lines, and "Client projects:" logos (Google, Microsoft, Cisco, Gartner).
 - **Content column** with two rust, uppercase-labelled sections:
   - **Case studies** (5) — white rounded cards (title → screenshot → "View case study" pill →
@@ -30,10 +30,6 @@ Matches the live design closely (rebuilt from the exact per-breakpoint frames in
 ## Pages
 
 - **`/`** — the sidebar + case studies/other projects layout described above.
-- **`/about/`** — the long-form bio from [morgankeys.com/about](https://morgankeys.com/about):
-  a centered 752px column with a home link, headshot beside "Hi, I'm Morgan." (rust period),
-  social icons, eight paragraphs, and the two resume links. Reached from the sidebar's
-  "Read more about me →".
 - **`/opengov-coa/`** — the OpenGov Chart of Accounts Manager case study from
   [morgankeys.com/opengov-coa](https://morgankeys.com/opengov-coa): a 1024px column with back
   navigation, hero screenshot, live AI-prototype callout (Figma Make), and long-form sections
